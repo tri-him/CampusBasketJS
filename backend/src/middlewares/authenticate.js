@@ -12,10 +12,24 @@ const resolveUserFromToken = async (request) => {
   }
 
   const token = authorizationHeader.replace("Bearer ", "").trim();
-  const payload = jwt.verify(token, env.jwtSecret);
+  if (!token) return null;
+
+  let payload;
+  try {
+    payload = jwt.verify(token, env.jwtSecret);
+  } catch (error) {
+    // Gracefully transform JWT verify errors (expired/malformed) into a 401
+    throw new AppError(401, "Invalid or expired authentication token.");
+  }
+
+  // Safely check both payload.userId and payload.id to prevent undefined queries
+  const targetId = payload.userId || payload.id;
+  if (!targetId) {
+    throw new AppError(401, "Malformed token payload.");
+  }
 
   const user = await prisma.user.findUnique({
-    where: { id: payload.userId },
+    where: { id: targetId },
   });
 
   if (!user) {
@@ -23,7 +37,10 @@ const resolveUserFromToken = async (request) => {
   }
 
   if (user.status === "SUSPENDED") {
-    throw new AppError(403, "This account is suspended. Please contact CampusBasket support.");
+    throw new AppError(
+      403,
+      "This account is suspended. Please contact CampusBasket support."
+    );
   }
 
   return user;
@@ -49,7 +66,13 @@ export const tryAuthenticate = catchAsync(async (request, _response, next) => {
     return;
   }
 
-  request.user = await resolveUserFromToken(request);
+  try {
+    request.user = await resolveUserFromToken(request);
+  } catch (error) {
+    // For optional auth (tryAuthenticate), an invalid token should just revert to guest mode
+    request.user = null;
+  }
+
   next();
 });
 
