@@ -111,7 +111,7 @@ const markPaymentFailed = async ({ paymentId, gatewayPaymentId = null, reason = 
 const createGatewayOrderForPayment = async ({ payment, order }) => {
   const razorpayOrder = await createRazorpayOrder({
     amount: toPaise(payment.amount),
-    currency: payment.currency || "INR",
+    currency: payment.currency || "GHS",
     receipt: buildReceipt(),
     notes: {
       source: "CampusBasket",

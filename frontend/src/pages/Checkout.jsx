@@ -15,7 +15,7 @@ import { userApi } from "../services/api";
 const SHIPPING_KEY = "CampusBasket-shipping";
 
 const formatCurrency = (value) =>
-  `Rs.${Number(value || 0).toLocaleString("en-IN")}`;
+  `GHS ${Number(value || 0).toLocaleString("en-GH")}`;
 
 const createEmptyShipping = (customer = null) => ({
   name: customer?.name || "",

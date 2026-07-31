@@ -16,7 +16,7 @@ const ensureConfigured = () => {
 const buildAuthHeader = () =>
   `Basic ${Buffer.from(`${env.razorpayKeyId}:${env.razorpayKeySecret}`).toString("base64")}`;
 
-export const createRazorpayOrder = async ({ amount, currency = "INR", receipt, notes = {} }) => {
+export const createRazorpayOrder = async ({ amount, currency = "GHS", receipt, notes = {} }) => {
   ensureConfigured();
 
   if (isDemoMode()) {

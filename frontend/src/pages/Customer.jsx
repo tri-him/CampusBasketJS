@@ -9,7 +9,7 @@ import {
 } from "../lib/marketplaceStore";
 
 const formatCurrency = (value) =>
-  `Rs.${Number(value || 0).toLocaleString("en-IN")}`;
+  `GHS ${Number(value || 0).toLocaleString("en-GH")}`;
 
 const getCustomerTier = (customer) => {
   if (customer.totalSpent >= 15000 || customer.totalOrders >= 5) {

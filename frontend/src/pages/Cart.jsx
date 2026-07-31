@@ -15,7 +15,7 @@ import useCustomerAuth from "../context/useCustomerAuth";
 import { getProductFallbackImage } from "../lib/productMedia";
 
 const formatCurrency = (value) =>
-  `Rs.${Number(value || 0).toLocaleString("en-IN")}`;
+  `GHS ${Number(value || 0).toLocaleString("en-GH")}`;
 
 function Cart() {
   const { cart, total, removeFromCart, updateQuantity } = useCart();

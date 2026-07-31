@@ -485,7 +485,7 @@ export const persistOrderFromPayment = async ({
         method: paymentInput.method,
         status: paymentInput.status,
         amount: orderDraft.amount,
-        currency: paymentInput.currency || "INR",
+        currency: paymentInput.currency || "GHS",
         reference: paymentInput.reference,
         payerLabel: paymentInput.payerLabel || null,
         gatewayOrderId: paymentInput.gatewayOrderId || null,

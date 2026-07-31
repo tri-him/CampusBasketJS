@@ -11,7 +11,7 @@ import {
 const statusOptions = ["New", "Packed", "Shipped", "Delivered", "Cancelled"];
 
 const formatCurrency = (value) =>
-  `Rs.${Number(value || 0).toLocaleString("en-IN")}`;
+  `GHS ${Number(value || 0).toLocaleString("en-GH")}`;
 
 function Order() {
   const { user } = useAuth();

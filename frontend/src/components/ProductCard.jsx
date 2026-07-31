@@ -181,7 +181,7 @@ function ProductCard({ product, mode, variant = "default" }) {
           {isWholesale ? (
             <>
               <p className={`${isFeatured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"} font-black text-slate-950`}>
-                Rs.{product.wholesalePrice}
+                GHS {product.wholesalePrice}
               </p>
               <p className={`${isFeatured ? "mt-2" : "mt-1"} text-xs uppercase tracking-[0.18em] text-slate-500`}>
                 Min order {product.minWholesaleQty} units
@@ -190,7 +190,7 @@ function ProductCard({ product, mode, variant = "default" }) {
           ) : (
             <>
               <p className={`${isFeatured ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"} font-black text-slate-950`}>
-                Rs.{product.retailPrice}
+                GHS {product.retailPrice}
               </p>
               <p className={`${isFeatured ? "mt-2" : "mt-1"} text-xs uppercase tracking-[0.18em] text-slate-500`}>
                 Premium retail pricing

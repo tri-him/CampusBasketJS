@@ -15,7 +15,7 @@ import {
 import { productApi } from "../services/api";
 
 const formatCurrency = (value) =>
-  `Rs.${Number(value || 0).toLocaleString("en-IN")}`;
+  `GHS ${Number(value || 0).toLocaleString("en-GH")}`;
 
 const formatReviewDate = (value) =>
   new Date(value).toLocaleDateString("en-IN", {
