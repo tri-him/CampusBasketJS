@@ -354,8 +354,21 @@ export const getMarketplaceProducts = () => getProductCache();
 
 export const syncMarketplaceProducts = async (params = {}) => {
   const response = await productApi.list(params);
-  const products = (response.data || []).map(normalizeProductRecord);
+
+  console.log("PRODUCT API RESPONSE:", response);
+
+  const rawProducts =
+    response.data ||
+    response.products ||
+    response.items ||
+    response;
+
+  const products = Array.isArray(rawProducts)
+    ? rawProducts.map(normalizeProductRecord)
+    : [];
+
   saveProducts(products);
+
   return products;
 };
 
