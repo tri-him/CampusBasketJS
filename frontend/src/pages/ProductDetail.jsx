@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import useCart from "../context/useCart";
 import useWishlist from "../context/useWishlist";
 import {
+  getMarketplaceProductById,
   normalizeCatalogType,
   normalizeProductRecord,
 } from "../lib/marketplaceStore";
@@ -45,8 +46,22 @@ function ProductDetail() {
 
   useEffect(() => {
     const loadProduct = async () => {
-      setLoading(true);
+      const cachedProduct = getMarketplaceProductById(productId);
+      const hasCachedProduct = Boolean(cachedProduct);
+
       setLoadError("");
+      setLoading(!hasCachedProduct);
+
+      if (hasCachedProduct) {
+        const initialGallery = getProductImageCandidates(cachedProduct);
+        setProduct(cachedProduct);
+        setVisibleGalleryImages(initialGallery);
+        setActiveImage(initialGallery[0] || getProductFallbackImage(cachedProduct));
+      } else {
+        setProduct(null);
+        setVisibleGalleryImages([]);
+        setActiveImage("");
+      }
 
       try {
         const response = await productApi.getById(productId);
@@ -56,7 +71,9 @@ function ProductDetail() {
         setVisibleGalleryImages(initialGallery);
         setActiveImage(initialGallery[0] || getProductFallbackImage(normalizedProduct));
       } catch (error) {
-        setLoadError(error.message || "Unable to load this product right now.");
+        if (!hasCachedProduct) {
+          setLoadError(error.message || "Unable to load this product right now.");
+        }
       } finally {
         setLoading(false);
       }

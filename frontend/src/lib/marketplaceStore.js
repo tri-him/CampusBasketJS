@@ -355,24 +355,19 @@ export const getMarketplaceProducts = () => getProductCache();
 
 
 export const syncMarketplaceProducts = async (params = {}) => {
-  console.log("FETCHING PRODUCTS WITH PARAMS:", params);
-
   const response = await productApi.list(params);
+  const nextProducts = (response.data || []).map(normalizeProductRecord);
+  const productsToSave =
+    params.section || params.search || params.category
+      ? mergeById(getProductCache(), nextProducts)
+      : nextProducts;
 
-  console.log("PRODUCT API RESPONSE:", response.data);
-
-  const products = (response.data || []).map(normalizeProductRecord);
-
-  console.log("NORMALIZED PRODUCTS:", products);
-
-  saveProducts(products);
-
-  console.log("SAVED TO CACHE:", getProductCache());
-
-  return products;
+  saveProducts(productsToSave);
+  return nextProducts;
 };
 
-
+export const getMarketplaceProductById = (productId) =>
+  getProductCache().find((product) => product.id === String(productId)) || null;
 
 export const getMarketplaceProductsForSection = (section) =>
   getMarketplaceProducts().filter((product) => {
