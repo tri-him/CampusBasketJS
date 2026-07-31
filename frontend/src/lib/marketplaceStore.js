@@ -363,15 +363,15 @@ export const syncMarketplaceProducts = async (params = {}) => {
 
   const products = (response.data || []).map(normalizeProductRecord);
 
-  console.log("NORMALIZED PRODUCTS:", products);
+  if (products.length === 0) {
+    console.warn("Empty response, keeping existing products");
+    return getProductCache();
+  }
 
   saveProducts(products);
 
-  console.log("SAVED TO CACHE:", getProductCache());
-
   return products;
 };
-
 
 
 export const getMarketplaceProductsForSection = (section) =>

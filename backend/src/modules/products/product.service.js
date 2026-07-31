@@ -225,11 +225,14 @@ export const listProducts = async (query) => {
     whereClauses.push({ sellerId });
   }
 
-  if (section) {
-    whereClauses.push({
-      OR: [{ catalogType: "ALL" }, { catalogType: section }],
-    });
-  }
+if (section) {
+  whereClauses.push({
+    OR: [
+      { catalogType: "all" },
+      { catalogType: section },
+    ],
+  });
+}
 
   if (search) {
     whereClauses.push({
