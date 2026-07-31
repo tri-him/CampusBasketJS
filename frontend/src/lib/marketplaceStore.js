@@ -352,12 +352,27 @@ const mergeById = (currentItems, nextItems) => {
 
 export const getMarketplaceProducts = () => getProductCache();
 
+
+
 export const syncMarketplaceProducts = async (params = {}) => {
+  console.log("FETCHING PRODUCTS WITH PARAMS:", params);
+
   const response = await productApi.list(params);
+
+  console.log("PRODUCT API RESPONSE:", response.data);
+
   const products = (response.data || []).map(normalizeProductRecord);
+
+  console.log("NORMALIZED PRODUCTS:", products);
+
   saveProducts(products);
+
+  console.log("SAVED TO CACHE:", getProductCache());
+
   return products;
 };
+
+
 
 export const getMarketplaceProductsForSection = (section) =>
   getMarketplaceProducts().filter((product) => {
