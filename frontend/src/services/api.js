@@ -1,5 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api";
-export const apiBaseUrl = API_BASE_URL;
+const API_URL = import.meta.env.VITE_API_URL;export const apiBaseUrl = API_BASE_URL;
 
 const TOKEN_KEYS = {
   seller: "CampusBasket-seller-token",
