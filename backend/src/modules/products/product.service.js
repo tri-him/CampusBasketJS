@@ -228,8 +228,8 @@ export const listProducts = async (query) => {
 if (section) {
   whereClauses.push({
     OR: [
-      { catalogType: "all" },
-      { catalogType: section },
+      { catalogType: "ALL" },
+      { catalogType: section.toUpperCase() },
     ],
   });
 }
