@@ -17,7 +17,7 @@ app.use(
         return;
       }
 
-      callback(new Error("Origin not allowed by BuyBlink CORS policy."));
+      callback(new Error("Origin not allowed by CampusBasket CORS policy."));
     },
     credentials: true,
   }),
@@ -30,7 +30,7 @@ app.use(morgan(env.nodeEnv === "production" ? "combined" : "dev"));
 app.get("/", (_request, response) => {
   response.json({
     success: true,
-    message: "BuyBlink backend is running.",
+    message: "CampusBasket backend is running.",
   });
 });
 

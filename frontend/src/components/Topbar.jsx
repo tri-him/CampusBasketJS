@@ -22,7 +22,7 @@ const pageMeta = {
   },
   "/dashboard/support": {
     title: "Support Desk",
-    subtitle: "Monitor customer tickets and support chats across BuyBlink.",
+    subtitle: "Monitor customer tickets and support chats across CampusBasket.",
   },
   "/dashboard/users": {
     title: "User Control",
@@ -55,7 +55,7 @@ function Topbar() {
       <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
         <div className="min-w-0">
           <p className="truncate text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 sm:tracking-[0.24em]">
-            {isAdmin ? "BuyBlink Support Admin" : user?.storeName || user?.name}
+            {isAdmin ? "CampusBasket Support Admin" : user?.storeName || user?.name}
           </p>
           <h1 className="mt-1 text-2xl font-bold text-slate-950">
             {currentMeta.title}

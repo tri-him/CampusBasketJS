@@ -114,10 +114,10 @@ const createGatewayOrderForPayment = async ({ payment, order }) => {
     currency: payment.currency || "INR",
     receipt: buildReceipt(),
     notes: {
-      source: "BuyBlink",
+      source: "CampusBasket",
       payment_method: payment.method,
       customer_email: order.shippingEmail,
-      buyblink_order_number: order.orderNumber,
+      CampusBasket_order_number: order.orderNumber,
     },
   });
 
@@ -155,7 +155,7 @@ export const createRazorpayCheckout = async ({ customer, payload }) => {
     currency: "INR",
     receipt: buildReceipt(),
     notes: {
-      source: "BuyBlink",
+      source: "CampusBasket",
       payment_method: payload.paymentMethod,
       customer_email: payload.shipping.email,
     },

@@ -1,4 +1,4 @@
-# BuyBlink Product Image Attributions
+# CampusBasket Product Image Attributions
 
 These local product photos were downloaded from the Openverse catalog of openly licensed images. Please verify licenses before commercial use.
 

@@ -56,7 +56,7 @@ function UserLogin() {
     <AuthShell
       variant="customer"
       badge="Customer Access"
-      title="Sign in to continue your premium BuyBlink shopping journey."
+      title="Sign in to continue your premium CampusBasket shopping journey."
       description="Access your account, orders, wishlist, saved addresses, and support history."
       formTitle="Customer Login"
       formDescription="Enter your email and password to continue."
@@ -66,7 +66,7 @@ function UserLogin() {
         { label: "Support", value: "Connected" },
       ]}
       highlights={customerHighlights}
-      alternateQuestion="New to BuyBlink?"
+      alternateQuestion="New to CampusBasket?"
       alternateText="Create account"
       alternateTo={redirectPath ? `/account/register?redirect=${encodeURIComponent(redirectPath)}` : "/account/register"}
     >

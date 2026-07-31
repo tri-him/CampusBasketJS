@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BusinessModeContext from "./BusinessModeContext";
 
-const BUSINESS_MODE_KEY = "buyblink-business-mode";
+const BUSINESS_MODE_KEY = "CampusBasket-business-mode";
 
 const BusinessModeProvider = ({ children }) => {
   const [mode, setMode] = useState(() => {

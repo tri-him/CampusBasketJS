@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AuthContext from "./AuthContext";
 import { authApi, authStorage, userApi } from "../services/api";
 
-const SELLER_USER_KEY = "buyblink-user";
+const SELLER_USER_KEY = "CampusBasket-user";
 const readStoredUser = () => {
   try {
     const savedUser = localStorage.getItem(SELLER_USER_KEY);

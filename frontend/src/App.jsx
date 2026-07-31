@@ -39,7 +39,7 @@ function RouteFallback() {
     <div className="min-h-screen bg-[#f7f7f2]">
       <div className="mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4">
         <div className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-500 shadow-sm">
-          Loading BuyBlink...
+          Loading CampusBasket...
         </div>
       </div>
     </div>

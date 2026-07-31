@@ -69,7 +69,7 @@ function UserRegister() {
     <AuthShell
       variant="customer"
       badge="Customer Registration"
-      title="Create your BuyBlink customer account and shop with confidence."
+      title="Create your CampusBasket customer account and shop with confidence."
       description="Sign up to unlock orders, wishlist, saved addresses, and support tools."
       formTitle="Create Account"
       formDescription="Fill in your details to get started."

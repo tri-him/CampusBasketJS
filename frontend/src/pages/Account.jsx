@@ -664,7 +664,7 @@ function Account() {
                   </p>
                   <p className="mt-1 text-sm text-slate-500">
                     {orders[0]
-                      ? `${formatCurrency(orders[0].amount)} | ${orders[0].shipping?.city || "BuyBlink"}`
+                      ? `${formatCurrency(orders[0].amount)} | ${orders[0].shipping?.city || "CampusBasket"}`
                       : "Place your first order to start building history."}
                   </p>
                 </div>

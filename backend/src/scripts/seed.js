@@ -4,8 +4,8 @@ import slugify from "slugify";
 import { prisma } from "../lib/prisma.js";
 import dummyProducts from "../../../frontend/src/data/dummyProducts.js";
 
-const platformEmail = "platform@buyblink.com";
-const adminEmail = "admin@buyblink.com";
+const platformEmail = "platform@CampusBasket.com";
+const adminEmail = "admin@CampusBasket.com";
 
 const buildSeedSlug = (name) =>
   `${slugify(name, { lower: true, strict: true, trim: true })}-platform`;
@@ -33,18 +33,18 @@ const normalizeSeedCatalogType = (catalogType) => {
 };
 
 const run = async () => {
-  const passwordHash = await bcrypt.hash("buyblink-platform", 10);
-  const adminPasswordHash = await bcrypt.hash("buyblink-admin", 10);
+  const passwordHash = await bcrypt.hash("CampusBasket-platform", 10);
+  const adminPasswordHash = await bcrypt.hash("CampusBasket-admin", 10);
 
   await prisma.user.upsert({
     where: { email: adminEmail },
     update: {
-      name: "BuyBlink Support Admin",
+      name: "CampusBasket Support Admin",
       status: "ACTIVE",
     },
     create: {
       role: "ADMIN",
-      name: "BuyBlink Support Admin",
+      name: "CampusBasket Support Admin",
       email: adminEmail,
       passwordHash: adminPasswordHash,
       status: "ACTIVE",
@@ -54,15 +54,15 @@ const run = async () => {
   const platformSeller = await prisma.user.upsert({
     where: { email: platformEmail },
     update: {
-      name: "BuyBlink Curated",
-      storeName: "BuyBlink Curated",
+      name: "CampusBasket Curated",
+      storeName: "CampusBasket Curated",
     },
     create: {
       role: "SELLER",
-      name: "BuyBlink Curated",
+      name: "CampusBasket Curated",
       email: platformEmail,
       passwordHash,
-      storeName: "BuyBlink Curated",
+      storeName: "CampusBasket Curated",
       status: "ACTIVE",
     },
   });
@@ -108,12 +108,12 @@ const run = async () => {
     });
   }
 
-  console.log("BuyBlink seed completed successfully.");
+  console.log("CampusBasket seed completed successfully.");
 };
 
 run()
   .catch((error) => {
-    console.error("BuyBlink seed failed:", error);
+    console.error("CampusBasket seed failed:", error);
     process.exitCode = 1;
   })
   .finally(async () => {

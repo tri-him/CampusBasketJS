@@ -289,7 +289,7 @@ export const updateAdminSupportTicket = async ({ ticketId, payload }) => {
       userId: updatedTicket.customerId,
       type: "SUPPORT_CHAT_UPDATED",
       title: `Support ticket ${updatedTicket.ticketNumber} is ${updatedTicket.status.toLowerCase().replaceAll("_", " ")}`,
-      message: "Your support ticket status has been updated by BuyBlink support.",
+      message: "Your support ticket status has been updated by CampusBasket support.",
       supportTicketId: updatedTicket.id,
       orderId: updatedTicket.orderId,
       details: {
@@ -402,7 +402,7 @@ export const sendAdminSupportChatMessage = async ({
     throw new AppError(404, "Support chat not found.");
   }
 
-  const agentName = senderName || chat.assignedAgentName || "BuyBlink Support";
+  const agentName = senderName || chat.assignedAgentName || "CampusBasket Support";
   const cleanedMessage = String(messageText || "").trim();
 
   if (!cleanedMessage && !attachment?.url) {
@@ -452,7 +452,7 @@ export const sendAdminSupportChatMessage = async ({
       userId: updatedChat.customerId,
       type: "SUPPORT_CHAT_UPDATED",
       title: `New support reply on ${updatedChat.subject}`,
-      message: "A BuyBlink support agent has replied to your support chat.",
+      message: "A CampusBasket support agent has replied to your support chat.",
       supportTicketId: updatedChat.ticketId,
       supportChatId: updatedChat.id,
       details: {
@@ -526,7 +526,7 @@ export const createSupportTicket = async ({ customer, payload }) => {
       userId: customer?.id,
       type: "SUPPORT_TICKET_CREATED",
       title: `Support ticket ${ticket.ticketNumber} created`,
-      message: "Your support request has been saved and will be reviewed by BuyBlink.",
+      message: "Your support request has been saved and will be reviewed by CampusBasket.",
       supportTicketId: ticket.id,
       orderId: ticket.orderId,
       details: {
@@ -855,7 +855,7 @@ export const markSupportChatReadForAdmin = async ({ chatId, adminUser }) => {
   const nextAgentId = chat.assignedAgentId || adminUser?.id || null;
   const nextAgentName = chat.assignedAgentId
     ? chat.assignedAgentName
-    : adminUser?.name || chat.assignedAgentName || "BuyBlink Support Admin";
+    : adminUser?.name || chat.assignedAgentName || "CampusBasket Support Admin";
   const updatedChat = await prisma.supportChat.update({
     where: { id: chat.id },
     data: {

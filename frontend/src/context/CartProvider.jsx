@@ -4,7 +4,7 @@ import { resolveProductMediaUrl } from "../lib/productMedia";
 import { CartContext } from "./Cartcontext";
 import useCustomerAuth from "./useCustomerAuth";
 
-const GUEST_CART_KEY = "buyblink-cart";
+const GUEST_CART_KEY = "CampusBasket-cart";
 
 const getItemMode = (mode) => (mode === "wholesale" ? "wholesale" : "retail");
 

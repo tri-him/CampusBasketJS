@@ -397,7 +397,7 @@ export const sendOrderStatusUpdateForOrder = async (orderId) => {
         userId: order.customerId,
         type: "ORDER_STATUS_CHANGED",
         title: `Order ${order.orderNumber} is ${order.status.toLowerCase()}`,
-        message: `Your BuyBlink order is now ${order.status.toLowerCase().replaceAll("_", " ")}.`,
+        message: `Your CampusBasket order is now ${order.status.toLowerCase().replaceAll("_", " ")}.`,
         orderId: order.id,
         details: {
           orderNumber: order.orderNumber,
@@ -516,7 +516,7 @@ export const persistOrderFromPayment = async ({
     userId: customer?.id,
     type: "ORDER_PLACED",
     title: `Order ${createdOrder.orderNumber} placed successfully`,
-    message: "Your BuyBlink order has been placed and is ready for fulfilment updates.",
+    message: "Your CampusBasket order has been placed and is ready for fulfilment updates.",
     orderId: createdOrder.id,
     details: {
       orderNumber: createdOrder.orderNumber,

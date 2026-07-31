@@ -2,9 +2,9 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000/api"
 export const apiBaseUrl = API_BASE_URL;
 
 const TOKEN_KEYS = {
-  seller: "buyblink-seller-token",
-  admin: "buyblink-seller-token",
-  customer: "buyblink-customer-token",
+  seller: "CampusBasket-seller-token",
+  admin: "CampusBasket-seller-token",
+  customer: "CampusBasket-customer-token",
 };
 
 export const authStorage = {

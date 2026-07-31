@@ -10,7 +10,7 @@ const sellerHighlights = [
     icon: Store,
     title: "Launch a branded store",
     description:
-      "Create your seller identity and start building a storefront that connects with BuyBlink shoppers.",
+      "Create your seller identity and start building a storefront that connects with CampusBasket shoppers.",
   },
   {
     icon: PackageSearch,
@@ -60,7 +60,7 @@ function Register() {
     <AuthShell
       variant="seller"
       badge="Seller Registration"
-      title="Set up your BuyBlink seller account and open your store."
+      title="Set up your CampusBasket seller account and open your store."
       description="Register your seller identity, connect it to your store name, and get ready to manage products, orders, and customers in the premium dashboard."
       formTitle="Seller Sign Up"
       formDescription="Create your seller account to unlock store setup, inventory management, and order operations."

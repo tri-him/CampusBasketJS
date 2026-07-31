@@ -27,7 +27,7 @@ const features = [
     icon: ShieldCheck,
     title: "Curated Premium Quality",
     description:
-      "BuyBlink highlights products that look polished, feel reliable, and are ready for repeat orders.",
+      "CampusBasket highlights products that look polished, feel reliable, and are ready for repeat orders.",
   },
   {
     icon: Truck,
@@ -105,7 +105,7 @@ const testimonials = [
   },
   {
     quote:
-      "Wholesale shopping is easier when the experience feels premium instead of cluttered. BuyBlink gets that part right.",
+      "Wholesale shopping is easier when the experience feels premium instead of cluttered. CampusBasket gets that part right.",
     name: "Karan Malhotra",
     role: "Procurement Manager",
   },
@@ -294,7 +294,7 @@ function Landing() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-brand-muted)] sm:mt-6 sm:text-lg sm:leading-8">
-              BuyBlink combines premium presentation, elegant product discovery,
+              CampusBasket combines premium presentation, elegant product discovery,
               and clean checkout into a storefront that feels professional from
               the first scroll to the final purchase.
             </p>
@@ -601,7 +601,7 @@ function Landing() {
                 </div>
 
                 <p className="mt-5 text-sm leading-7 text-[var(--color-brand-muted)]">
-                  This section fills with real customer reviews as more orders are completed and reviewed on BuyBlink.
+                  This section fills with real customer reviews as more orders are completed and reviewed on CampusBasket.
                 </p>
 
                 <div className="mt-5 rounded-2xl border border-[color:rgba(214,178,94,0.18)] bg-white p-4">

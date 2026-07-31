@@ -34,7 +34,7 @@ function BrandLogo({
             compact ? "text-sm" : "text-base"
           }`}
         >
-          BuyBlink
+          CampusBasket
         </p>
         {showTagline && (
           <p

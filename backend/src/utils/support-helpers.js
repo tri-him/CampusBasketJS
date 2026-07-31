@@ -3,24 +3,24 @@ const prioritySlaMap = {
   MEDIUM: 8,
   LOW: 24,
 };
-const supportAssistantName = "BuyBlink Support Assistant";
+const supportAssistantName = "CampusBasket Support Assistant";
 
 const agentAssignments = [
   {
     match: ["refund", "return"],
-    agent: "Riya from BuyBlink Returns",
+    agent: "Riya from CampusBasket Returns",
   },
   {
     match: ["payment", "upi", "card"],
-    agent: "Karan from BuyBlink Payments",
+    agent: "Karan from CampusBasket Payments",
   },
   {
     match: ["delivery", "delay", "shipping", "logistics"],
-    agent: "Aisha from BuyBlink Care",
+    agent: "Aisha from CampusBasket Care",
   },
   {
     match: ["seller", "behavior", "quality"],
-    agent: "Neha from BuyBlink Resolution",
+    agent: "Neha from CampusBasket Resolution",
   },
 ];
 
@@ -52,8 +52,8 @@ export const getAssignedSupportAgent = ({ category, priority }) => {
   }
 
   return String(priority || "").trim().toUpperCase() === "HIGH"
-    ? "Neha from BuyBlink Resolution"
-    : "Aisha from BuyBlink Care";
+    ? "Neha from CampusBasket Resolution"
+    : "Aisha from CampusBasket Care";
 };
 
 export const getSupportAssistantName = () => supportAssistantName;

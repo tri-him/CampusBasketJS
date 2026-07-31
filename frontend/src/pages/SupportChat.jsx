@@ -76,7 +76,7 @@ function SupportChat() {
   const [searchParams] = useSearchParams();
   const queryOrderId = searchParams.get("order") || "";
   const queryTicketId = searchParams.get("ticket") || "";
-  const lastOrderEmail = localStorage.getItem("buyblink-last-order-email") || "";
+  const lastOrderEmail = localStorage.getItem("CampusBasket-last-order-email") || "";
   const defaultEmail = customer?.email || lastOrderEmail;
   const defaultName = customer?.name || "";
 
@@ -316,7 +316,7 @@ function SupportChat() {
                 Live Support Chat
               </p>
               <h1 className="mt-3 text-4xl font-black tracking-tight">
-                Continue your issue with BuyBlink Care in a dedicated chat thread.
+                Continue your issue with CampusBasket Care in a dedicated chat thread.
               </h1>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
                 Start a conversation, connect it to an order or complaint, and keep
@@ -415,7 +415,7 @@ function SupportChat() {
                     <option value="">No order linked</option>
                     {orders.map((order) => (
                       <option key={order.id} value={order.id}>
-                        {order.id} - {order.shipping?.city || "BuyBlink order"}
+                        {order.id} - {order.shipping?.city || "CampusBasket order"}
                       </option>
                     ))}
                   </select>
@@ -689,7 +689,7 @@ function SupportChat() {
                       rows={3}
                       value={draftMessage}
                       onChange={(event) => setDraftMessage(event.target.value)}
-                      placeholder="Type your message to BuyBlink Care"
+                      placeholder="Type your message to CampusBasket Care"
                       className="min-h-[88px] flex-1 rounded-[1.5rem] border border-slate-200 px-4 py-3 outline-none transition focus:border-cyan-400"
                     />
                     <div className="flex w-full flex-col gap-3 lg:w-auto">
@@ -742,7 +742,7 @@ function SupportChat() {
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500">
                   Add your email and a short subject on the left, then open a new
-                  thread to talk with BuyBlink Care about orders, refunds, payment,
+                  thread to talk with CampusBasket Care about orders, refunds, payment,
                   or product issues.
                 </p>
               </div>

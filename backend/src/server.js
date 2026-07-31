@@ -6,11 +6,11 @@ const startServer = async () => {
   await prisma.$connect();
 
   const server = app.listen(env.port, () => {
-    console.log(`BuyBlink backend listening on port ${env.port}`);
+    console.log(`CampusBasket backend listening on port ${env.port}`);
   });
 
   const shutdown = async (signal) => {
-    console.log(`${signal} received. Closing BuyBlink backend...`);
+    console.log(`${signal} received. Closing CampusBasket backend...`);
     await prisma.$disconnect();
     server.close(() => {
       process.exit(0);
@@ -27,7 +27,7 @@ const startServer = async () => {
 };
 
 startServer().catch(async (error) => {
-  console.error("Failed to start BuyBlink backend:", error);
+  console.error("Failed to start CampusBasket backend:", error);
   await prisma.$disconnect();
   process.exit(1);
 });

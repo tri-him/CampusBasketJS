@@ -47,7 +47,7 @@ const formatDate = (value) =>
 
 const normalizeAdminChat = (chat) => ({
   ...chat,
-  assignedAgentName: chat.assignedAgentName || "BuyBlink Support Admin",
+  assignedAgentName: chat.assignedAgentName || "CampusBasket Support Admin",
   unreadForAdmin: Number(chat.unreadForAdmin) || 0,
   unreadForCustomer: Number(chat.unreadForCustomer) || 0,
   assignedAgentId: chat.assignedAgentId || "",
@@ -122,7 +122,7 @@ function SupportDesk() {
   const [replyDraft, setReplyDraft] = useState("");
   const [replyAttachment, setReplyAttachment] = useState(null);
   const [replyAttachmentError, setReplyAttachmentError] = useState("");
-  const [agentName, setAgentName] = useState(user?.name || "BuyBlink Support Admin");
+  const [agentName, setAgentName] = useState(user?.name || "CampusBasket Support Admin");
   const [closeTicketOnReply, setCloseTicketOnReply] = useState(false);
 
   const loadSupportDesk = useCallback(
@@ -268,7 +268,7 @@ function SupportDesk() {
   const handleChatStatusChange = async (chatId, status) => {
     await supportApi.updateAdminChat(chatId, {
       status,
-      assignedAgentName: agentName.trim() || user?.name || "BuyBlink Support Admin",
+      assignedAgentName: agentName.trim() || user?.name || "CampusBasket Support Admin",
       assignedAgentId: user?.id || undefined,
     });
     await loadSupportDesk();
@@ -311,7 +311,7 @@ function SupportDesk() {
 
     await supportApi.sendAdminMessage(selectedChat.id, {
       text: replyDraft,
-      senderName: agentName.trim() || user?.name || "BuyBlink Support Admin",
+      senderName: agentName.trim() || user?.name || "CampusBasket Support Admin",
       senderId: user?.id || undefined,
       closeTicket: closeTicketOnReply,
       attachment: replyAttachment || undefined,
@@ -368,7 +368,7 @@ function SupportDesk() {
               Admin Support Workspace
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              Keep BuyBlink customer issues moving with one unified queue.
+              Keep CampusBasket customer issues moving with one unified queue.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
               Review complaints, monitor chat threads, update ticket statuses,

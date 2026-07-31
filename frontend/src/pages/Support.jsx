@@ -39,7 +39,7 @@ function Support() {
   const { customer } = useCustomerAuth();
   const [searchParams] = useSearchParams();
   const selectedOrderId = searchParams.get("order") || "";
-  const lastOrderEmail = localStorage.getItem("buyblink-last-order-email") || "";
+  const lastOrderEmail = localStorage.getItem("CampusBasket-last-order-email") || "";
   const customerEmail = customer?.email || lastOrderEmail;
   const customerName = customer?.name || "";
 
@@ -206,7 +206,7 @@ function Support() {
                   Raise Complaint
                 </p>
                 <h2 className="mt-2 text-3xl font-black text-slate-950">
-                  Tell BuyBlink what went wrong.
+                  Tell CampusBasket what went wrong.
                 </h2>
                 <p className="mt-2 text-sm leading-7 text-slate-500">
                   Add the issue details once and we will keep the complaint record
@@ -288,7 +288,7 @@ function Support() {
                     <option value="">No order selected</option>
                     {orders.map((order) => (
                       <option key={order.id} value={order.id}>
-                        {order.id} - {order.shipping?.city || "BuyBlink order"}
+                        {order.id} - {order.shipping?.city || "CampusBasket order"}
                       </option>
                     ))}
                   </select>

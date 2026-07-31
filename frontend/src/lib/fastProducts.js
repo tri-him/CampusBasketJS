@@ -10,8 +10,8 @@ export const getDemoMarketplaceProducts = () =>
     normalizeProductRecord({
       ...product,
       id: `demo-${product.id}`,
-      sellerId: "buyblink-platform",
-      sellerName: "BuyBlink Curated",
+      sellerId: "CampusBasket-platform",
+      sellerName: "CampusBasket Curated",
     }),
   );
 

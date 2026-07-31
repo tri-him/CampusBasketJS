@@ -81,7 +81,7 @@ function Cart() {
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-slate-500">
               Browse the premium retail and wholesale collections to start
-              building your next BuyBlink order.
+              building your next CampusBasket order.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link

@@ -53,7 +53,7 @@ test("product media normalization preserves user-provided image sources", () => 
   ]);
 });
 
-test("product media normalization falls back to BuyBlink-owned catalog media", () => {
+test("product media normalization falls back to CampusBasket-owned catalog media", () => {
   const normalized = normalizeProductMediaUrls({
     productSlug: "premium-storefront-654321",
     image: "not-an-image",
@@ -92,7 +92,7 @@ test("product media normalization strips predefined catalog views when real medi
   assert.deepEqual(normalized.galleryUrls, [buildMediaProxyPath("https://images.example.com/photo.jpg")]);
 });
 
-test("generated order number follows the BuyBlink prefix format", () => {
+test("generated order number follows the CampusBasket prefix format", () => {
   assert.match(buildOrderNumber(), /^ORD-\d+$/);
 });
 
@@ -108,15 +108,15 @@ test("support SLA helpers map priorities to hours and user-facing ETA labels", (
 test("support agent assignment prefers category keyword matches and falls back by priority", () => {
   assert.equal(
     getAssignedSupportAgent({ category: "Refund and Return", priority: "LOW" }),
-    "Riya from BuyBlink Returns",
+    "Riya from CampusBasket Returns",
   );
   assert.equal(
     getAssignedSupportAgent({ category: "Payment Problem", priority: "LOW" }),
-    "Karan from BuyBlink Payments",
+    "Karan from CampusBasket Payments",
   );
   assert.equal(
     getAssignedSupportAgent({ category: "General Support", priority: "HIGH" }),
-    "Neha from BuyBlink Resolution",
+    "Neha from CampusBasket Resolution",
   );
 });
 
@@ -124,7 +124,7 @@ test("support chat helpers produce contextual welcome and reply messages", () =>
   const chat = {
     id: "chat_123",
     customerName: "Abhi",
-    assignedAgentName: "Aisha from BuyBlink Care",
+    assignedAgentName: "Aisha from CampusBasket Care",
     orderId: "ORD-101",
   };
 

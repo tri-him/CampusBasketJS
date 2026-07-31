@@ -9,7 +9,7 @@ function Footer() {
         <div>
           <BrandLogo theme="light" />
           <p className="mt-5 max-w-sm text-sm leading-6 text-[var(--color-brand-muted)]">
-            BuyBlink helps modern shoppers discover premium everyday products
+            CampusBasket helps modern shoppers discover premium everyday products
             while giving sellers a smarter way to grow retail and wholesale
             revenue.
           </p>
@@ -76,7 +76,7 @@ function Footer() {
           <div className="mt-5 space-y-3 text-sm text-[var(--color-brand-muted)]">
             <p className="inline-flex items-center gap-2">
               <Mail size={15} className="text-[var(--color-brand-champagne-deep)]" />
-              support@buyblink.com
+              support@CampusBasket.com
             </p>
             <p className="inline-flex items-center gap-2">
               <Phone size={15} className="text-[var(--color-brand-champagne-deep)]" />
@@ -88,7 +88,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-[color:rgba(214,178,94,0.2)] px-6 py-5 text-center text-sm text-[var(--color-brand-muted)]">
-        Copyright 2026 BuyBlink. Crafted for premium retail and wholesale commerce.
+        Copyright 2026 CampusBasket. Crafted for premium retail and wholesale commerce.
       </div>
     </footer>
   );

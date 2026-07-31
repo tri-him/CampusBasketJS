@@ -180,7 +180,7 @@ CREATE TABLE "SupportChat" (
     "category" TEXT NOT NULL,
     "subject" TEXT NOT NULL,
     "status" "SupportChatStatus" NOT NULL DEFAULT 'ACTIVE',
-    "assignedAgentName" TEXT NOT NULL DEFAULT 'Aisha from BuyBlink Care',
+    "assignedAgentName" TEXT NOT NULL DEFAULT 'Aisha from CampusBasket Care',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

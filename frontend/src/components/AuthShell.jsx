@@ -119,7 +119,7 @@ function AuthShell({
 
           <div className="mt-8 rounded-[1.75rem] border border-slate-200 bg-white/85 p-5 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
-              BuyBlink Promise
+              CampusBasket Promise
             </p>
             <div className="mt-4 space-y-3">
               <div className="flex items-center gap-3 text-sm text-slate-700">
@@ -128,7 +128,7 @@ function AuthShell({
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-700">
                 <CheckCircle2 size={16} className={theme.accentText} />
-                Live accounts, orders, and support synced with BuyBlink backend
+                Live accounts, orders, and support synced with CampusBasket backend
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-700">
                 <CheckCircle2 size={16} className={theme.accentText} />

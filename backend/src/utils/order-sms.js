@@ -10,7 +10,7 @@ const buildOrderShortSummary = (order) => {
 
 export const buildOrderConfirmationSms = (order) => ({
   type: "ORDER_CONFIRMATION",
-  message: `BuyBlink: Order ${order.orderNumber} confirmed for ${buildOrderShortSummary(order)}. Total ${formatCurrency(order.amount)}. We will email you full details shortly.`,
+  message: `CampusBasket: Order ${order.orderNumber} confirmed for ${buildOrderShortSummary(order)}. Total ${formatCurrency(order.amount)}. We will email you full details shortly.`,
 });
 
 export const buildOrderStatusSms = (order) => {
@@ -26,6 +26,6 @@ export const buildOrderStatusSms = (order) => {
 
   return {
     type: "ORDER_STATUS_UPDATE",
-    message: `BuyBlink: Order ${order.orderNumber} update. ${nextStep} Current status: ${statusLabel}.`,
+    message: `CampusBasket: Order ${order.orderNumber} update. ${nextStep} Current status: ${statusLabel}.`,
   };
 };

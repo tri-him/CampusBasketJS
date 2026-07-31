@@ -45,9 +45,9 @@ const generateDummyPaymentId = () => "pay_dummy_" + Date.now();
 
 function Orders() {
   const { customer } = useCustomerAuth();
-  const lastOrderEmail = localStorage.getItem("buyblink-last-order-email") || "";
+  const lastOrderEmail = localStorage.getItem("CampusBasket-last-order-email") || "";
   const emailStatus =
-    localStorage.getItem("buyblink-last-order-email-status") || "Unavailable";
+    localStorage.getItem("CampusBasket-last-order-email-status") || "Unavailable";
   const [reviewTarget, setReviewTarget] = useState(null);
   const [reviewForm, setReviewForm] = useState({
     rating: "5",
@@ -210,13 +210,13 @@ function Orders() {
 
         await syncOrders(customer?.email || lastOrderEmail || "");
         setOrdersVersion((current) => current + 1);
-        localStorage.setItem("buyblink-last-order-id", verifiedOrder.databaseId);
+        localStorage.setItem("CampusBasket-last-order-id", verifiedOrder.databaseId);
         localStorage.setItem(
-          "buyblink-last-order-email",
+          "CampusBasket-last-order-email",
           verifiedOrder.shipping?.email || reviewerEmail || "",
         );
         localStorage.setItem(
-          "buyblink-last-order-email-status",
+          "CampusBasket-last-order-email-status",
           verifiedOrder.emailStatus || "Unavailable",
         );
         setRetryingOrderId("");
@@ -229,7 +229,7 @@ function Orders() {
       key: checkout.keyId,
       amount: checkout.amount,
       currency: checkout.currency,
-      name: "BuyBlink",
+      name: "CampusBasket",
       description: `Retry payment for ${checkout.order.id}`,
       order_id: checkout.razorpayOrderId,
       prefill: {
@@ -238,7 +238,7 @@ function Orders() {
         contact: order.shipping?.phone || "",
       },
       notes: {
-        buyblink_order_number: checkout.order.id,
+        CampusBasket_order_number: checkout.order.id,
         retry_payment: "true",
       },
       theme: {
@@ -262,13 +262,13 @@ function Orders() {
 
         await syncOrders(customer?.email || lastOrderEmail || "");
         setOrdersVersion((current) => current + 1);
-        localStorage.setItem("buyblink-last-order-id", verifiedOrder.databaseId);
+        localStorage.setItem("CampusBasket-last-order-id", verifiedOrder.databaseId);
         localStorage.setItem(
-          "buyblink-last-order-email",
+          "CampusBasket-last-order-email",
           verifiedOrder.shipping?.email || reviewerEmail || "",
         );
         localStorage.setItem(
-          "buyblink-last-order-email-status",
+          "CampusBasket-last-order-email-status",
           verifiedOrder.emailStatus || "Unavailable",
         );
         setRetryingOrderId("");
@@ -312,7 +312,7 @@ function Orders() {
                 Order History
               </p>
               <h1 className="mt-3 text-4xl font-black tracking-tight">
-                Track every BuyBlink order in one place.
+                Track every CampusBasket order in one place.
               </h1>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
                 Review item-level seller status, shipping details, and your latest

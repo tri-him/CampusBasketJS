@@ -19,7 +19,7 @@ const palettes = [
 const resolvePalette = (name = "") => palettes[hashString(name) % palettes.length];
 const apiOrigin = apiBaseUrl.replace(/\/api\/?$/, "");
 const mediaProxyPath = "/api/media/proxy";
-const mediaVariantMarker = "::buyblink-view=";
+const mediaVariantMarker = "::CampusBasket-view=";
 const buildRemoteImageProxyUrl = (value) =>
   `${apiOrigin}/api/media/proxy?url=${encodeURIComponent(value)}`;
 
@@ -42,7 +42,7 @@ const parseMediaUrl = (value = "") => {
 };
 
 export const createProductPlaceholder = ({
-  name = "BuyBlink Product",
+  name = "CampusBasket Product",
   category = "Premium catalog",
 } = {}) => {
   const [background, accent, surface] = resolvePalette(name);
@@ -62,14 +62,14 @@ export const createProductPlaceholder = ({
       <rect x="610" y="286" width="404" height="156" rx="30" fill="#ffffff" fill-opacity="0.12" />
       <text x="610" y="510" font-size="58" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">${name}</text>
       <text x="610" y="568" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" fill-opacity="0.82">${category}</text>
-      <text x="610" y="648" font-size="32" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">Image refreshed by BuyBlink</text>
+      <text x="610" y="648" font-size="32" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">Image refreshed by CampusBasket</text>
     </svg>
   `);
 };
 
 export const getProductFallbackImage = (product = {}) =>
   createProductPlaceholder({
-    name: product.name || "BuyBlink Product",
+    name: product.name || "CampusBasket Product",
     category: product.category || "Premium catalog",
   });
 

@@ -1,12 +1,12 @@
 import { orderApi, paymentApi, productApi, reviewApi, supportApi } from "../services/api";
 import { resolveProductMediaUrl } from "./productMedia";
 
-const PRODUCTS_KEY = "buyblink-products-cache";
-const ORDERS_KEY = "buyblink-orders";
-const ORDER_EMAILS_KEY = "buyblink-order-emails";
-const PRODUCT_REVIEWS_KEY = "buyblink-product-reviews";
-const SUPPORT_TICKETS_KEY = "buyblink-support-tickets";
-const SUPPORT_CHATS_KEY = "buyblink-support-chats";
+const PRODUCTS_KEY = "CampusBasket-products-cache";
+const ORDERS_KEY = "CampusBasket-orders";
+const ORDER_EMAILS_KEY = "CampusBasket-order-emails";
+const PRODUCT_REVIEWS_KEY = "CampusBasket-product-reviews";
+const SUPPORT_TICKETS_KEY = "CampusBasket-support-tickets";
+const SUPPORT_CHATS_KEY = "CampusBasket-support-chats";
 
 const DEFAULT_CATEGORY = "Eco Essentials";
 const DEFAULT_SUSTAINABILITY_SCORE = 80;
@@ -162,12 +162,12 @@ export const normalizeProductRecord = (product) => {
 
   return {
     id: String(product.id),
-    sellerId: product.sellerId || product.seller?.id || "buyblink-platform",
+    sellerId: product.sellerId || product.seller?.id || "CampusBasket-platform",
     sellerName:
       product.sellerName ||
       product.seller?.storeName ||
       product.seller?.name ||
-      "BuyBlink Curated",
+      "CampusBasket Curated",
     name: product.name,
     description: product.description || "",
     category: product.category || DEFAULT_CATEGORY,
@@ -318,9 +318,9 @@ const normalizeSupportChatRecord = (chat) => ({
   category: chat.category,
   subject: chat.subject,
   status: toTitleCaseStatus(chat.status),
-  assignedAgent: chat.assignedAgent || chat.assignedAgentName || "Aisha from BuyBlink Care",
+  assignedAgent: chat.assignedAgent || chat.assignedAgentName || "Aisha from CampusBasket Care",
   assignedAgentId: chat.assignedAgentId || "",
-  assignedAgentName: chat.assignedAgentName || chat.assignedAgent || "Aisha from BuyBlink Care",
+  assignedAgentName: chat.assignedAgentName || chat.assignedAgent || "Aisha from CampusBasket Care",
   assignedAt: chat.assignedAt || null,
   unreadForAdmin: Number(chat.unreadForAdmin) || 0,
   unreadForCustomer: Number(chat.unreadForCustomer) || 0,

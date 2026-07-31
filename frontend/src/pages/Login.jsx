@@ -52,8 +52,8 @@ function Login() {
       badge={role === "ADMIN" ? "Admin Access" : "Seller Access"}
       title={
         role === "ADMIN"
-          ? "Sign in to manage BuyBlink support operations."
-          : "Sign in to run your BuyBlink store with confidence."
+          ? "Sign in to manage CampusBasket support operations."
+          : "Sign in to run your CampusBasket store with confidence."
       }
       description={
         role === "ADMIN"
@@ -93,13 +93,13 @@ function Login() {
                 icon: Store,
                 title: "Platform-wide access",
                 description:
-                  "Manage support across the full BuyBlink marketplace instead of a single seller storefront.",
+                  "Manage support across the full CampusBasket marketplace instead of a single seller storefront.",
               },
             ]
           : sellerHighlights
       }
       alternateQuestion={
-        role === "ADMIN" ? "Need seller access instead?" : "New seller on BuyBlink?"
+        role === "ADMIN" ? "Need seller access instead?" : "New seller on CampusBasket?"
       }
       alternateText={role === "ADMIN" ? "Open seller login" : "Register your store"}
       alternateTo={role === "ADMIN" ? "/login?role=SELLER" : "/register"}
@@ -109,7 +109,7 @@ function Login() {
           <span className="text-sm font-semibold text-slate-700">Email</span>
           <input
             type="email"
-            placeholder={role === "ADMIN" ? "admin@buyblink.com" : "seller@store.com"}
+            placeholder={role === "ADMIN" ? "admin@CampusBasket.com" : "seller@store.com"}
             required
             className={`${AUTH_FIELD_BASE} ${theme.focus}`}
             value={email}

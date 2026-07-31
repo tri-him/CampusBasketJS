@@ -30,7 +30,7 @@ export const formatProductNameFromSlug = (value = "") =>
     .split("-")
     .filter(Boolean)
     .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
-    .join(" ") || "BuyBlink Product";
+    .join(" ") || "CampusBasket Product";
 
 export const buildCatalogMediaPath = (productSlug = "product", view = "hero") =>
   `/api/media/catalog/${String(productSlug || "product").trim() || "product"}/${view}.svg`;

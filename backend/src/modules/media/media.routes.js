@@ -16,7 +16,7 @@ const createCatalogMediaSvg = ({ productSlug, view = "hero" }) => {
       accent: "#10b981",
       surface: "#ecfdf5",
       text: "#ffffff",
-      badge: "BUYBLINK CATALOG",
+      badge: "CampusBasket CATALOG",
       note: "Deployment-safe product media",
     },
     angle: {
@@ -33,7 +33,7 @@ const createCatalogMediaSvg = ({ productSlug, view = "hero" }) => {
       surface: "#0f172a",
       text: "#0f172a",
       badge: "DETAIL VIEW",
-      note: "BuyBlink-owned fallback asset",
+      note: "CampusBasket-owned fallback asset",
     },
   };
   const theme = paletteMap[view] || paletteMap.hero;
@@ -59,7 +59,7 @@ const createCatalogMediaSvg = ({ productSlug, view = "hero" }) => {
       <rect x="634" y="586" width="292" height="82" rx="28" fill="${view === "detail" ? "#0f172a" : "rgba(15,23,42,0.8)"}" />
       <text x="160" y="122" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="${theme.text}" fill-opacity="0.88" letter-spacing="8">${theme.badge}</text>
       <text x="634" y="248" font-size="60" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="${theme.text}">${productName}</text>
-      <text x="634" y="492" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="${theme.text}" fill-opacity="0.82">BuyBlink catalog image</text>
+      <text x="634" y="492" font-size="28" font-family="Arial, Helvetica, sans-serif" fill="${theme.text}" fill-opacity="0.82">CampusBasket catalog image</text>
       <text x="634" y="640" font-size="32" font-weight="700" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">${theme.note}</text>
     </svg>
   `;
@@ -106,7 +106,7 @@ router.get("/proxy", async (request, response) => {
   try {
     const upstreamResponse = await fetch(targetUrl, {
       headers: {
-        "User-Agent": "BuyBlink Media Proxy",
+        "User-Agent": "CampusBasket Media Proxy",
         Accept: "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
       },
     });
@@ -152,7 +152,7 @@ router.get("/catalog/:productSlug/:view.svg", (request, response) => {
         <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
           <rect width="800" height="600" fill="#0f172a" />
           <text x="80" y="320" font-size="40" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">
-            BuyBlink media not found
+            CampusBasket media not found
           </text>
         </svg>
       `,
@@ -176,7 +176,7 @@ router.get("/products/:mediaSlug/:view.svg", (request, response) => {
         <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
           <rect width="800" height="600" fill="#0f172a" />
           <text x="80" y="320" font-size="40" font-family="Arial, Helvetica, sans-serif" fill="#ffffff">
-            BuyBlink media not found
+            CampusBasket media not found
           </text>
         </svg>
       `,

@@ -32,7 +32,7 @@ export const createDemoProductMediaSvg = (product, view = "hero") => {
   ];
   const notes = Array.isArray(product.galleryNotes) ? product.galleryNotes : [];
   const subtitleMap = {
-    hero: notes[0] || "BuyBlink catalog preview",
+    hero: notes[0] || "CampusBasket catalog preview",
     angle: notes[1] || notes[0] || "Alternate view",
     detail: notes[2] || notes[1] || "Detail preview",
   };
@@ -43,7 +43,7 @@ export const createDemoProductMediaSvg = (product, view = "hero") => {
   };
   const style = styleMap[view] || styleMap.hero;
   const badgeMap = {
-    hero: "BUYBLINK HERO",
+    hero: "CampusBasket HERO",
     angle: "PRODUCT ANGLE",
     detail: "DETAIL VIEW",
   };

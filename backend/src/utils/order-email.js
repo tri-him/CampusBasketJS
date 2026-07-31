@@ -33,11 +33,11 @@ const buildShippingHtml = (order) =>
   `<div>${order.shippingAddress}</div><div>${order.shippingCity}, ${order.shippingPincode}</div>`;
 
 export const buildOrderConfirmationEmail = (order) => {
-  const subject = `BuyBlink Order Confirmation - ${order.orderNumber}`;
+  const subject = `CampusBasket Order Confirmation - ${order.orderNumber}`;
   const text = [
     `Hi ${order.shippingName || "Customer"},`,
     "",
-    "Thank you for shopping with BuyBlink.",
+    "Thank you for shopping with CampusBasket.",
     `Your order ${order.orderNumber} has been placed successfully.`,
     "",
     "Order Summary:",
@@ -53,15 +53,15 @@ export const buildOrderConfirmationEmail = (order) => {
     "",
     "We will keep you updated as your order moves forward.",
     "",
-    "Team BuyBlink",
+    "Team CampusBasket",
   ].join("\n");
 
   const html = renderEmailLayout({
-    preheader: `Your BuyBlink order ${order.orderNumber} is confirmed.`,
+    preheader: `Your CampusBasket order ${order.orderNumber} is confirmed.`,
     eyebrow: "Order Confirmed",
     title: `Your order ${order.orderNumber} is in.`,
     intro:
-      "Thanks for shopping with BuyBlink. We have saved your order details and will keep you posted as fulfilment moves forward.",
+      "Thanks for shopping with CampusBasket. We have saved your order details and will keep you posted as fulfilment moves forward.",
     badges: [
       { label: "Payment Method", value: order.paymentMethod },
       {
@@ -91,12 +91,12 @@ export const buildOrderConfirmationEmail = (order) => {
 };
 
 export const buildOrderStatusUpdateEmail = (order) => {
-  const subject = `BuyBlink Order Update - ${order.orderNumber} is ${formatStatusLabel(order.status)}`;
+  const subject = `CampusBasket Order Update - ${order.orderNumber} is ${formatStatusLabel(order.status)}`;
   const statusText = formatStatusLabel(order.status);
   const text = [
     `Hi ${order.shippingName || "Customer"},`,
     "",
-    `Your BuyBlink order ${order.orderNumber} is now ${statusText}.`,
+    `Your CampusBasket order ${order.orderNumber} is now ${statusText}.`,
     "",
     "Updated Items:",
     buildOrderItemsText(order),
@@ -107,19 +107,19 @@ export const buildOrderStatusUpdateEmail = (order) => {
     "Shipping Address:",
     buildShippingText(order),
     "",
-    "You can continue tracking the order from your BuyBlink account.",
+    "You can continue tracking the order from your CampusBasket account.",
     "",
-    "Team BuyBlink",
+    "Team CampusBasket",
   ].join("\n");
 
   const html = renderEmailLayout({
-    preheader: `Your BuyBlink order ${order.orderNumber} is now ${statusText}.`,
+    preheader: `Your CampusBasket order ${order.orderNumber} is now ${statusText}.`,
     eyebrow: "Order Update",
     title: `Order ${order.orderNumber} is ${statusText}.`,
     intro:
       order.status === "CANCELLED"
         ? "We have recorded a cancellation update for your order."
-        : "Here is the latest fulfilment progress for your BuyBlink order.",
+        : "Here is the latest fulfilment progress for your CampusBasket order.",
     badges: [
       { label: "Current Status", value: statusText },
       { label: "Payment Method", value: order.paymentMethod },
@@ -140,9 +140,9 @@ export const buildOrderStatusUpdateEmail = (order) => {
           order.status === "SHIPPED"
             ? "Your order is on the move. Keep an eye on your account for the next delivery update."
             : order.status === "DELIVERED"
-              ? "Your order has been marked as delivered. You can now review the purchased items inside BuyBlink."
+              ? "Your order has been marked as delivered. You can now review the purchased items inside CampusBasket."
               : order.status === "CANCELLED"
-                ? "If this cancellation was unexpected, please contact BuyBlink support and share your order number."
+                ? "If this cancellation was unexpected, please contact CampusBasket support and share your order number."
                 : "Your seller is actively progressing the order. We will send another update if anything changes.",
       },
     ],

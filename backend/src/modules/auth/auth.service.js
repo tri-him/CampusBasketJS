@@ -81,7 +81,7 @@ export const loginUser = async ({ email, password, role }) => {
   }
 
   if (user.status === "SUSPENDED") {
-    throw new AppError(403, "This account is suspended. Please contact BuyBlink support.");
+    throw new AppError(403, "This account is suspended. Please contact CampusBasket support.");
   }
 
   if (role && user.role !== role) {

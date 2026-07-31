@@ -179,7 +179,7 @@ function ProductForm({
 
   const previewFallbackProduct = useMemo(
     () => ({
-      name: formData.name || "BuyBlink Product",
+      name: formData.name || "CampusBasket Product",
       category: formData.category || "Premium catalog",
     }),
     [formData.category, formData.name],

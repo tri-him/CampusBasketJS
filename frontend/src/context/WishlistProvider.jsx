@@ -4,7 +4,7 @@ import WishlistContext from "./WishlistContext";
 import { getMarketplaceProducts, normalizeProductRecord } from "../lib/marketplaceStore";
 import { userApi } from "../services/api";
 
-const WISHLIST_KEY = "buyblink-user-wishlist";
+const WISHLIST_KEY = "CampusBasket-user-wishlist";
 
 const readWishlistStore = () => {
   try {

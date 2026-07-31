@@ -1,4 +1,4 @@
-# 🛒 BuyBlink
+# 🛒 CampusBasket
 
 > **A sustainable full-stack multi-vendor e-commerce platform supporting both B2B and B2C commerce with retail & wholesale purchasing, role-based dashboards, secure authentication, and online payment integration.**
 
@@ -6,13 +6,13 @@
 
 ## 📖 Overview
 
-BuyBlink is a full-stack multi-vendor e-commerce platform designed to support both **Business-to-Business (B2B)** and **Business-to-Consumer (B2C)** commerce in a single marketplace.
+CampusBasket is a full-stack multi-vendor e-commerce platform designed to support both **Business-to-Business (B2B)** and **Business-to-Consumer (B2C)** commerce in a single marketplace.
 
 The platform enables customers to purchase products in **retail** or **wholesale** quantities while providing dedicated dashboards for **Customers**, **Sellers**, and **Administrators**. It is built with a scalable backend architecture using **Node.js, Express, PostgreSQL, and Prisma ORM**, with secure authentication using **JWT** and payment integration through **Razorpay**.
 
 ---
 
-## ✨ Why BuyBlink?
+## ✨ Why CampusBasket?
 
 - 🌱 Sustainable multi-vendor marketplace
 - 🛍️ Supports both Retail & Wholesale purchasing
@@ -34,7 +34,7 @@ The platform enables customers to purchase products in **retail** or **wholesale
 ## 🏠 Home Page
 
 <p align="center">
-  <img src="./docs/screenshots/home.png.png" alt="BuyBlink Home Page" width="900">
+  <img src="./docs/screenshots/home.png.png" alt="CampusBasket Home Page" width="900">
 </p>
 
 ## 📦 Product Listing
@@ -67,7 +67,7 @@ The platform enables customers to purchase products in **retail** or **wholesale
 
 Frontend:https://buy-blink.vercel.app/
 
-Backend:https://buyblink-rnvr.onrender.com
+Backend:https://CampusBasket-rnvr.onrender.com
 
 ---
 
@@ -160,17 +160,17 @@ Backend:https://buyblink-rnvr.onrender.com
 # 🏗️ System Architecture
 <p align="center">
   <img src="docs/screenshots/System_Architecture.png.png"
-       alt="BuyBlink System Architecture"
+       alt="CampusBasket System Architecture"
        width="900">
 </p>
 
-BuyBlink follows a modular client-server architecture where the React frontend communicates with a RESTful Express backend. Authentication is handled using JWT, business logic is organized into modules, PostgreSQL serves as the relational database through Prisma ORM, and Razorpay powers secure payment processing.
+CampusBasket follows a modular client-server architecture where the React frontend communicates with a RESTful Express backend. Authentication is handled using JWT, business logic is organized into modules, PostgreSQL serves as the relational database through Prisma ORM, and Razorpay powers secure payment processing.
 
 # 🗄️ Database Design
 
 <p align="center">
   <img src="docs/screenshots/ER_Diagram.png"
-       alt="BuyBlink ER Diagram"
+       alt="CampusBasket ER Diagram"
        width="900">
 </p>
 
@@ -194,7 +194,7 @@ The PostgreSQL database is designed using Prisma ORM and models the core entitie
 
 # 🔒 Security
 
-BuyBlink follows secure backend development practices including:
+CampusBasket follows secure backend development practices including:
 
 - JWT Authentication
 - Role-Based Authorization
@@ -209,7 +209,7 @@ BuyBlink follows secure backend development practices including:
 # 📂 Repository Structure
 
 ```text
-BuyBlink/
+CampusBasket/
 │
 ├── frontend/
 │   └── src/
@@ -246,20 +246,20 @@ Running the backend seed creates the following accounts.
 
 ```text
 Email:
-admin@buyblink.com
+admin@CampusBasket.com
 
 Password:
-buyblink-admin
+CampusBasket-admin
 ```
 
 ### Seller
 
 ```text
 Email:
-platform@buyblink.com
+platform@CampusBasket.com
 
 Password:
-buyblink-platform
+CampusBasket-platform
 ```
 
 Customers can register directly from the application.
@@ -271,7 +271,7 @@ Customers can register directly from the application.
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Abhi3620v/BuyBlink.git
+git clone https://github.com/Abhi3620v/CampusBasket.git
 ```
 
 ---

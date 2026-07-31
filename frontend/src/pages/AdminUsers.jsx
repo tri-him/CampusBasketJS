@@ -141,7 +141,7 @@ function AdminUsers() {
               Admin User Control
             </p>
             <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">
-              Manage account health across the BuyBlink marketplace.
+              Manage account health across the CampusBasket marketplace.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
               Review customer, seller, and admin accounts from one screen and

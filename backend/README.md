@@ -1,6 +1,6 @@
-# BuyBlink Backend
+# CampusBasket Backend
 
-Backend stack for BuyBlink:
+Backend stack for CampusBasket:
 
 - `Node.js + Express`
 - `PostgreSQL`
@@ -45,7 +45,7 @@ backend/
 ## Setup
 
 1. Copy `.env.example` to `.env`
-2. Create a PostgreSQL database named `buyblink`
+2. Create a PostgreSQL database named `CampusBasket`
 3. Install dependencies with `npm install`
 4. Generate Prisma client with `npm run prisma:generate`
 5. Run migrations with `npm run prisma:migrate`
@@ -67,7 +67,7 @@ RAZORPAY_WEBHOOK_SECRET=
 ### Email via SMTP
 
 ```env
-EMAIL_FROM="BuyBlink <no-reply@yourdomain.com>"
+EMAIL_FROM="CampusBasket <no-reply@yourdomain.com>"
 EMAIL_REPLY_TO=support@yourdomain.com
 SMTP_HOST=
 SMTP_PORT=587

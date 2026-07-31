@@ -144,7 +144,7 @@ function Order() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `buyblink-${mode}-orders-report.csv`;
+    link.download = `CampusBasket-${mode}-orders-report.csv`;
     link.click();
     URL.revokeObjectURL(url);
   };

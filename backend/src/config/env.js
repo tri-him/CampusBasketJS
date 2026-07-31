@@ -14,7 +14,7 @@ export const env = {
   databaseUrl: process.env.DATABASE_URL ?? "",
   jwtSecret: process.env.JWT_SECRET ?? "replace-with-a-strong-secret",
   jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? "7d",
-  emailFrom: process.env.EMAIL_FROM ?? "BuyBlink <no-reply@buyblink.local>",
+  emailFrom: process.env.EMAIL_FROM ?? "CampusBasket <no-reply@CampusBasket.local>",
   emailReplyTo: process.env.EMAIL_REPLY_TO ?? "",
   smtpHost: process.env.SMTP_HOST ?? "",
   smtpPort: Number.isFinite(smtpPort) ? smtpPort : 587,

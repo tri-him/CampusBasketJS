@@ -37,7 +37,7 @@ export const renderEmailLayout = ({
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:680px;background:#ffffff;border-radius:28px;overflow:hidden;border:1px solid #e2e8f0;">
             <tr>
               <td style="padding:36px 36px 28px;background:linear-gradient(135deg,#020617 0%,#0f172a 100%);color:#ffffff;">
-                <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#a5f3fc;">${escapeHtml(eyebrow || "BuyBlink Update")}</div>
+                <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#a5f3fc;">${escapeHtml(eyebrow || "CampusBasket Update")}</div>
                 <h1 style="margin:14px 0 0;font-size:34px;line-height:1.15;font-weight:800;">${escapeHtml(title)}</h1>
                 <p style="margin:16px 0 0;font-size:15px;line-height:1.8;color:#cbd5e1;">${escapeHtml(intro || "")}</p>
               </td>
@@ -60,9 +60,9 @@ export const renderEmailLayout = ({
             <tr>
               <td style="padding:24px 36px 36px;background:#f8fafc;border-top:1px solid #e2e8f0;">
                 <p style="margin:0;font-size:14px;line-height:1.8;color:#475569;">${escapeHtml(
-                  footerNote || "You are receiving this update because of activity on your BuyBlink order.",
+                  footerNote || "You are receiving this update because of activity on your CampusBasket order.",
                 )}</p>
-                <p style="margin:16px 0 0;font-size:14px;font-weight:700;color:#0f172a;">Team BuyBlink</p>
+                <p style="margin:16px 0 0;font-size:14px;font-weight:700;color:#0f172a;">Team CampusBasket</p>
               </td>
             </tr>
           </table>

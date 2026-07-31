@@ -23,7 +23,7 @@ const resolveUserFromToken = async (request) => {
   }
 
   if (user.status === "SUSPENDED") {
-    throw new AppError(403, "This account is suspended. Please contact BuyBlink support.");
+    throw new AppError(403, "This account is suspended. Please contact CampusBasket support.");
   }
 
   return user;

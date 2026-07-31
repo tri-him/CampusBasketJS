@@ -75,7 +75,7 @@ function Settings() {
               Seller Settings
             </p>
             <h2 className="mt-2 text-3xl font-black tracking-tight">
-              Shape how your store appears across BuyBlink.
+              Shape how your store appears across CampusBasket.
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
               Update your seller identity, keep contact details fresh, and make

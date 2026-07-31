@@ -8,8 +8,8 @@ const formatCurrency = (value) =>
   `Rs.${Number(value || 0).toLocaleString("en-IN")}`;
 
 function OrderSuccess() {
-  const lastOrderId = localStorage.getItem("buyblink-last-order-id") || "";
-  const lastOrderEmail = localStorage.getItem("buyblink-last-order-email") || "";
+  const lastOrderId = localStorage.getItem("CampusBasket-last-order-id") || "";
+  const lastOrderEmail = localStorage.getItem("CampusBasket-last-order-email") || "";
   const [order, setOrder] = useState(() => getOrderById(lastOrderId));
 
   useEffect(() => {
@@ -38,7 +38,7 @@ function OrderSuccess() {
               Order Successful
             </p>
             <h1 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">
-              Your BuyBlink order is confirmed.
+              Your CampusBasket order is confirmed.
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-300">
               We have locked in your order details, recorded the payment state,

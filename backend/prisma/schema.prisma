@@ -327,7 +327,7 @@ model SupportChat {
   lastRepliedBy     ChatSenderType?
   assignedAgentId   String?
   assignedAt        DateTime?
-  assignedAgentName String             @default("Aisha from BuyBlink Care")
+  assignedAgentName String             @default("Aisha from CampusBasket Care")
   createdAt         DateTime           @default(now())
   updatedAt         DateTime           @updatedAt
   messages          SupportChatMessage[]

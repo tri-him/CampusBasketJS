@@ -23,9 +23,9 @@ const formatCurrency = (value) =>
 
 const readShippingSnapshot = () => {
   try {
-    return JSON.parse(localStorage.getItem("buyblink-shipping") || "{}");
+    return JSON.parse(localStorage.getItem("CampusBasket-shipping") || "{}");
   } catch {
-    localStorage.removeItem("buyblink-shipping");
+    localStorage.removeItem("CampusBasket-shipping");
     return {};
   }
 };
@@ -115,7 +115,7 @@ function Payment() {
       <div className="min-h-screen bg-[#f7f7f2]">
         <div className="mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4">
           <div className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-500 shadow-sm">
-            Loading BuyBlink...
+            Loading CampusBasket...
           </div>
         </div>
       </div>
@@ -127,9 +127,9 @@ function Payment() {
   const isPaymentReady = cart.length > 0 && shippingReady;
 
   const storeOrderLocallyAndContinue = async (order) => {
-    localStorage.setItem("buyblink-last-order-id", order.databaseId);
-    localStorage.setItem("buyblink-last-order-email", shipping.email || "");
-    localStorage.setItem("buyblink-last-order-email-status", order.emailStatus);
+    localStorage.setItem("CampusBasket-last-order-id", order.databaseId);
+    localStorage.setItem("CampusBasket-last-order-email", shipping.email || "");
+    localStorage.setItem("CampusBasket-last-order-email-status", order.emailStatus);
     await clearCart();
     navigate("/order-success");
   };
@@ -208,8 +208,8 @@ function Payment() {
       key: checkout.keyId,
       amount: checkout.amount,
       currency: checkout.currency,
-      name: "BuyBlink",
-      description: `BuyBlink order ${checkout.order.id}`,
+      name: "CampusBasket",
+      description: `CampusBasket order ${checkout.order.id}`,
       order_id: checkout.razorpayOrderId,
       prefill: {
         name: shipping.name,
@@ -217,7 +217,7 @@ function Payment() {
         contact: shipping.phone,
       },
       notes: {
-        buyblink_order_number: checkout.order.id,
+        CampusBasket_order_number: checkout.order.id,
         payment_method: selectedMethod,
       },
       theme: {
@@ -293,7 +293,7 @@ function Payment() {
               </h1>
               <p className="mt-2 hidden max-w-2xl text-sm leading-7 text-slate-300 sm:block">
                 UPI and card payments now open a real Razorpay checkout, while COD
-                still places the order directly from BuyBlink.
+                still places the order directly from CampusBasket.
               </p>
             </div>
 
@@ -387,7 +387,7 @@ function Payment() {
               <p className="mt-2 text-sm leading-7 text-slate-500">
                 {selectedMethod === "COD"
                   ? "Your order will be created immediately with a pending payment record."
-                  : "Sensitive payment details are collected inside Razorpay's hosted checkout, not inside the BuyBlink form."}
+                  : "Sensitive payment details are collected inside Razorpay's hosted checkout, not inside the CampusBasket form."}
               </p>
             </div>
           </section>
@@ -457,7 +457,7 @@ function Payment() {
                       Gateway payment gets verified
                     </p>
                     <p className="mt-1">
-                      Razorpay sends the payment response, and BuyBlink verifies the
+                      Razorpay sends the payment response, and CampusBasket verifies the
                       signature on the server before confirming the order.
                     </p>
                   </div>
@@ -471,7 +471,7 @@ function Payment() {
                       Email confirmation is tracked
                     </p>
                     <p className="mt-1">
-                      After successful verification, BuyBlink sends and tracks the
+                      After successful verification, CampusBasket sends and tracks the
                       order confirmation email.
                     </p>
                   </div>

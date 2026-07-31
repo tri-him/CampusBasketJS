@@ -167,7 +167,7 @@ const productImageTargets = [
   },
 ];
 
-const userAgent = "BuyBlinkProductImageBot/1.0 (+https://buyblink.local)";
+const userAgent = "CampusBasketProductImageBot/1.0 (+https://CampusBasket.local)";
 
 const sanitizeText = (value = "") =>
   String(value || "")
@@ -322,7 +322,7 @@ const writeAttributionFile = async (attributions) => {
     )
     .join("\n");
 
-  const contents = `# BuyBlink Product Image Attributions\n\nThese local product photos were downloaded from the Openverse catalog of openly licensed images. Please verify licenses before commercial use.\n\n| Product | Work | Creator | License | Provider | Link |\n| --- | --- | --- | --- | --- | --- |\n${rows}\n`;
+  const contents = `# CampusBasket Product Image Attributions\n\nThese local product photos were downloaded from the Openverse catalog of openly licensed images. Please verify licenses before commercial use.\n\n| Product | Work | Creator | License | Provider | Link |\n| --- | --- | --- | --- | --- | --- |\n${rows}\n`;
   await writeFile(attributionPath, contents);
 };
 

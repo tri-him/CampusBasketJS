@@ -260,12 +260,12 @@ export const updateAdminUserStatus = async ({ adminUser, userId, status }) => {
       type: "ACCOUNT_STATUS_CHANGED",
       title:
         updatedUser.status === "SUSPENDED"
-          ? "Your BuyBlink account has been suspended"
-          : "Your BuyBlink account is active again",
+          ? "Your CampusBasket account has been suspended"
+          : "Your CampusBasket account is active again",
       message:
         updatedUser.status === "SUSPENDED"
-          ? "Your account access has been temporarily blocked. Contact BuyBlink support if you think this is a mistake."
-          : "Your account access has been restored and you can use BuyBlink again.",
+          ? "Your account access has been temporarily blocked. Contact CampusBasket support if you think this is a mistake."
+          : "Your account access has been restored and you can use CampusBasket again.",
       details: {
         previousStatus: existingUser.status,
         nextStatus: updatedUser.status,
